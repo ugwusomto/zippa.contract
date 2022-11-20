@@ -1,25 +1,31 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.9;
+pragma solidity ^0.8.0; 
 
 import "@openzeppelin/contracts-upgradeable/token/ERC20/ERC20Upgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
 import "@openzeppelin/contracts-upgradeable/utils/math/SafeMathUpgradeable.sol";
+import "@openzeppelin/contracts-upgradeable/token/ERC20/IERC20Upgradeable.sol";
 
 contract ZippaToken is Initializable, ERC20Upgradeable, OwnableUpgradeable {
     using SafeMathUpgradeable for uint256;
 
-    address public constant deadWallet =
-        0x000000000000000000000000000000000000dEaD;
     mapping(address => bool) public _isBlacklisted;
     address public mintMaster;
+    address public feeCollector;
+    uint public price;
+    uint public tokensSold;
+    uint minimumAmount;
+    // Emitted when tokens are sold
+    event TokenSold(address indexed account, uint indexed price, uint tokensGot);
 
     // store addresses that a automatic market maker pairs. Any transfer *to* these addresses
     function initialize() external virtual initializer {
         __Ownable_init();
-        __ERC20_init("Zippa Token", "$ZIPPA");
+        __ERC20_init("Zippa Token", "ZIPPA");
         mintMaster = owner(); // initial owner = mintmaster (set to piston race contract later)
         _mint(owner(), 1000000 * (10**18));
+        minimumAmount  = 20000;
     }
 
     function mint(address _to, uint256 _amount) external {
@@ -44,5 +50,30 @@ contract ZippaToken is Initializable, ERC20Upgradeable, OwnableUpgradeable {
             "only the current mint master is allowed to do this"
         );
         mintMaster = _value;
+    }
+
+    function buyToken(uint256 _tokenAmount) external payable{ 
+        require(_tokenAmount >= minimumAmount, "Minimum Amount to purchase required");
+        require(!_isBlacklisted[_msgSender()], "This address is whitelisted");
+        uint256 cost = _tokenAmount.mul(price);
+        require(cost <= msg.value , "Insufficient amount provided for token purchase");
+        uint256 tokensToGet = _tokenAmount.mul(10**18);
+        payable(feeCollector).transfer(msg.value);
+        _mint(_msgSender(),tokensToGet);
+        tokensSold = tokensSold.add(tokensToGet);
+        emit TokenSold(_msgSender(), price, tokensToGet);
+    }
+
+    // If the intended price is 0.01 per token, call this function with the result of 0.01 * 10**18 (_price = intended price * 10**18; calc this in a calculator).
+    function tokenPrice(uint _price) external onlyOwner {
+        price = _price;
+    }
+
+    function changeFeeCollector(address _feeCollector) external onlyOwner {
+        feeCollector = _feeCollector;
+    }
+
+    function setMinimumAmount(uint amount) external onlyOwner{
+        minimumAmount = amount;
     }
 }

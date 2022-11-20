@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.9;
-import "@openzeppelin/contracts-upgradeable/token/ERC20/IERC20Upgradeable.sol.sol";
+pragma solidity ^0.8.0; 
+import "@openzeppelin/contracts-upgradeable/token/ERC20/IERC20Upgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
 import "@openzeppelin/contracts-upgradeable/utils/math/SafeMathUpgradeable.sol";
@@ -33,7 +33,7 @@ contract ZippaPreSale is Initializable, OwnableUpgradeable {
     event Sale(address indexed account, uint indexed price, uint tokensGot);
     
 
-    initialize(address _feeCollector, address _saleToken) external virtual initializer {
+    function initialize(address _feeCollector, address _saleToken) external virtual initializer {
         __Ownable_init();
         deployer = _msgSender();
         feeCollector = _feeCollector;

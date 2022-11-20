@@ -1,53 +1,36 @@
 {
-  "name": "mobo",
+  "name": "",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
-  "scripts": {
-    "start": "npx hardhat node",
-    "local": "npx hardhat run scripts/deploy.ts --network localhost",
-    "testnet": "npx hardhat run scripts/deploy.ts --network testnet",
-    "testnet-token": "npx hardhat run scripts/deploy_token.ts --network testnet",
-    "mainnet": "npx hardhat run scripts/deploy.ts --network mainnet",
-    "mainnet-token": "npx hardhat run scripts/deploy_token.ts --network mainnet",
-    "matic": "npx hardhat run scripts/deploy.ts --network matic",
-    "polygon": "npx hardhat run scripts/deploy.ts --network polygon",
-    "test": "npx hardhat test",
-    "verify-mainnet": "npx hardhat verify  --network mainnet --constructor-args arguments.ts 0xdD6F74C25387a4c2ea0B3ABe743BA69E51dc0F2D ",
-    "verify-testnet": "npx hardhat verify  --network testnet --constructor-args factory.js 0xe64dB07BBf2c1149Edc9f1e1428DA7b2E6b427B1",
-    "verify-tokenA": "npx hardhat verify --contract contracts/mock/TokenA.sol:TokenA --network testnet --constructor-args token.js 0x2e86e3aa0CaAFc3C2561CF6479db808cC595c47d",
-    "verify-tokenB": "npx hardhat verify --contract contracts/mock/TokenB.sol:TokenB   --network testnet --constructor-args token.js 0x65919B33eCF26427AEEbFc98e41002d6499fE0D0"
-    
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
-    "@ethersproject/abi": "^5.4.7",
-    "@ethersproject/providers": "^5.4.7",
-    "@nomicfoundation/hardhat-chai-matchers": "^1.0.0",
-    "@nomicfoundation/hardhat-network-helpers": "^1.0.0",
-    "@nomicfoundation/hardhat-toolbox": "^1.0.1",
     "@nomiclabs/hardhat-ethers": "^2.0.0",
-    "@nomiclabs/hardhat-etherscan": "^3.0.0",
-    "@typechain/ethers-v5": "^10.1.0",
-    "@typechain/hardhat": "^6.1.2",
-    "@types/chai": "^4.2.0",
-    "@types/mocha": "^9.1.0",
-    "@types/node": ">=12.0.0",
+    "@nomiclabs/hardhat-waffle": "^2.0.0",
     "chai": "^4.2.0",
-    "ethers": "^5.7.0",
-    "hardhat": "^2.10.2",
-    "hardhat-gas-reporter": "^1.0.8",
-    "solidity-coverage": "^0.7.21",
-    "ts-node": ">=8.0.0",
-    "typechain": "^8.1.0",
-    "typescript": ">=4.5.0"
+    "erc721a": "^4.2.3",
+    "ethereum-waffle": "^3.0.0",
+    "ethers": "^5.0.0",
+    "hardhat": "^2.9.4"
+  },
+  "scripts": {
+    "test": "npx hardhat test",
+    "testnet-zippa": "npx hardhat run scripts/deploy_zippa_token.js --network testnet",
+    "testnet-zipp": "npx hardhat run scripts/deploy_zipp_token.js --network testnet",
+    "testnet-presale": "npx hardhat run scripts/deploy_presale.js --network testnet",
+    "testnet-exchange": "npx hardhat run scripts/deploy_exchange.js --network testnet",
+    "clean": "npx hardhat clean",
+    "hardhat": "npx hardhat node --network hardhat",
+    "node-run": "npx hardhat node",
+    "compile": "npx hardhat compile",
+    "verify-testnet-zippa": "npx hardhat verify --network testnet  '0x780173c8080aE4401b1907A1BB363974a13c9B13'",
+    "verify-testnet-zipp": "npx hardhat verify --network testnet  '0x62CB75Bb34Aa4c459D379161AF7DD12AF3D10Dbb'",
+    "verify-presale": "npx hardhat verify --network testnet --constructor-args presale_testnet.js '0xBB25BE03c454bCEa98E5c798b8f6E64446Da67d4' --contract 'contracts/PreSale.sol:ZippaPreSale'",
+    "verify-exchange": "npx hardhat verify --network testnet  '0x9534Bd90c73a180026e921af994Eba877Ab933cC'"
   },
   "dependencies": {
+    "@nomiclabs/hardhat-etherscan": "^3.1.0",
     "@openzeppelin/contracts": "^4.7.3",
-    "@remix-project/remixd": "^0.6.6",
-    "@uniswap/lib": "^4.0.1-alpha",
-    "remixd": "^0.2.4"
+    "@openzeppelin/contracts-upgradeable": "^4.7.0",
+    "@openzeppelin/hardhat-upgrades": "^1.19.0"
   }
 }
