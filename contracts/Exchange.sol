@@ -27,10 +27,10 @@ contract Exchange is Initializable, OwnableUpgradeable {
        supportedTokens[_add] = status;
     }
    
-    function swap(address inputToken , address outputToken , uint amountIn) public payable {
+    function swap(address inputToken , address outputToken , uint amountIn) public  {
         require(supportedTokens[inputToken] , "This token is not supported for trade here");
         require(supportedTokens[outputToken] , "This token is not supported for trade here");
-        require(whitelisters[_msgSender()], "This address is whitelisted");
+        require(!whitelisters[_msgSender()], "This address is whitelisted");
         require(amountIn >= minimumAmount, "Minimum Amount to swap required");
         require(swapActive, "Sale has ended.");
         require(IERC20Upgradeable(inputToken).allowance(_msgSender(), address(this)) >= amountIn , "Insufficient allowance to complete swap ");

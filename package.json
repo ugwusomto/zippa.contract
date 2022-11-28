@@ -18,6 +18,7 @@
     "testnet-zipp": "npx hardhat run scripts/deploy_zipp_token.js --network testnet",
     "testnet-presale": "npx hardhat run scripts/deploy_presale.js --network testnet",
     "testnet-exchange": "npx hardhat run scripts/deploy_exchange.js --network testnet",
+    "testnet-exchange-upgrade": "npx hardhat run scripts/deploy_exchange_upgrade.js --network testnet",
     "clean": "npx hardhat clean",
     "hardhat": "npx hardhat node --network hardhat",
     "node-run": "npx hardhat node",
