@@ -39,7 +39,7 @@ contract ZippaPreSale is Initializable, OwnableUpgradeable {
         feeCollector = _feeCollector;
         saleToken = _saleToken;
         saleActive = true;
-        minimumAmount  = 20000;
+        minimumAmount  = 2*10e18;
     }
     
     // If the intended price is 0.01 per token, call this function with the result of 0.01 * 10**18 (_price = intended price * 10**18; calc this in a calculator).
@@ -62,10 +62,10 @@ contract ZippaPreSale is Initializable, OwnableUpgradeable {
     function buyTokens(uint256 _tokenAmount) public payable {
         require(_tokenAmount >= minimumAmount, "PRESALE: Minimum Amount to purchase required");
         require(!whitelisters[_msgSender()].status, "PRESALE: This address is whitelisted");
-        uint256 cost = _tokenAmount.mul(price);
+        uint256 cost = (_tokenAmount.mul(price)).div(1e18);
         require(saleActive == true, "PRESALE: Sale has ended.");
         require(cost <= msg.value , "PRESALE: Insufficient amount provided for token purchase");
-        uint256 tokensToGet = _tokenAmount.mul(10**18);
+        uint256 tokensToGet = _tokenAmount;
         payable(feeCollector).transfer(msg.value);
         require(IERC20Upgradeable(saleToken).transfer(_msgSender(), tokensToGet), "PRESALE: CONTRACT DOES NOT HAVE ENOUGH TOKENS.");
         tokensSold = tokensSold.add(tokensToGet);

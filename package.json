@@ -17,8 +17,12 @@
     "testnet-zippa": "npx hardhat run scripts/deploy_zippa_token.js --network testnet",
     "testnet-zipp": "npx hardhat run scripts/deploy_zipp_token.js --network testnet",
     "testnet-presale": "npx hardhat run scripts/deploy_presale.js --network testnet",
+    "testnet-staking": "npx hardhat run scripts/deploy_staking.js --network testnet",
     "testnet-exchange": "npx hardhat run scripts/deploy_exchange.js --network testnet",
     "testnet-exchange-upgrade": "npx hardhat run scripts/deploy_exchange_upgrade.js --network testnet",
+    "testnet-zippa-upgrade": "npx hardhat run scripts/deploy_zippa_token_upgrade.js --network testnet",
+    "testnet-presale-upgrade": "npx hardhat run scripts/deploy_presale_upgrade.js --network testnet",
+    "testnet-staking-upgrade": "npx hardhat run scripts/deploy_staking_upgrade.js --network testnet",
     "clean": "npx hardhat clean",
     "hardhat": "npx hardhat node --network hardhat",
     "node-run": "npx hardhat node",
@@ -26,7 +30,9 @@
     "verify-testnet-zippa": "npx hardhat verify --network testnet  '0x780173c8080aE4401b1907A1BB363974a13c9B13'",
     "verify-testnet-zipp": "npx hardhat verify --network testnet  '0x62CB75Bb34Aa4c459D379161AF7DD12AF3D10Dbb'",
     "verify-presale": "npx hardhat verify --network testnet --constructor-args presale_testnet.js '0xBB25BE03c454bCEa98E5c798b8f6E64446Da67d4' --contract 'contracts/PreSale.sol:ZippaPreSale'",
-    "verify-exchange": "npx hardhat verify --network testnet  '0x9534Bd90c73a180026e921af994Eba877Ab933cC'"
+    "verify-exchange": "npx hardhat verify --network testnet  '0x9534Bd90c73a180026e921af994Eba877Ab933cC'",
+    "verify-staking": "npx hardhat verify --network testnet  '0xE3A30D158AaF90dF05cE8d3385E7837678476946'"
+
   },
   "dependencies": {
     "@nomiclabs/hardhat-etherscan": "^3.1.0",

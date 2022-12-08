@@ -15,7 +15,7 @@ contract ZippaToken is Initializable, ERC20Upgradeable, OwnableUpgradeable {
     address public feeCollector;
     uint public price;
     uint public tokensSold;
-    uint minimumAmount;
+    uint public minimumAmount;
     // Emitted when tokens are sold
     event TokenSold(address indexed account, uint indexed price, uint tokensGot);
 
@@ -55,7 +55,7 @@ contract ZippaToken is Initializable, ERC20Upgradeable, OwnableUpgradeable {
     function buyToken(uint256 _tokenAmount) external payable{ 
         require(_tokenAmount >= minimumAmount, "Minimum Amount to purchase required");
         require(!_isBlacklisted[_msgSender()], "This address is whitelisted");
-        uint256 cost = _tokenAmount.mul(price);
+        uint256 cost = (_tokenAmount.mul(price)).div(10e18);
         require(cost <= msg.value , "Insufficient amount provided for token purchase");
         uint256 tokensToGet = _tokenAmount.mul(10**18);
         payable(feeCollector).transfer(msg.value);

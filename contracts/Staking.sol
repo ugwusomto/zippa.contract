@@ -6,6 +6,7 @@ import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
 import "@openzeppelin/contracts-upgradeable/utils/math/SafeMathUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/token/ERC20/IERC20Upgradeable.sol";
+import "./IIERC20.sol";
 
 contract ZippaStaking is Initializable, OwnableUpgradeable {
 
@@ -47,13 +48,13 @@ contract ZippaStaking is Initializable, OwnableUpgradeable {
         require(_amount > 0 , "Amount must be above zero");
         require(MinStakeAmount > _amount , "Amount must be above minimum");
         require(_staker != address(0) , "Invalid stakers address");
-        require(IERC20Upgradeable(StakeToken).balanceOf(_staker) >= _amount , "Insufficient stake amount");
-        require(IERC20Upgradeable(StakeToken).allowance(address(this),_staker) >= _amount , "Insufficient allowance to spend  the stake amount");
-        IERC20Upgradeable(StakeToken).transferFrom(_staker,address(this),_amount);
+        require(IIERC20(StakeToken).balanceOf(_staker) >= _amount , "Insufficient stake amount");
+        require(IIERC20(StakeToken).allowance(address(this),_staker) >= _amount , "Insufficient allowance to spend  the stake amount");
+        IIERC20(StakeToken).transferFrom(_staker,address(this),_amount);
         uint amountStaked = _amount;
         // check for referrer and give him his earning
         if(referrals[_staker] != address(0) && stakings[_staker].amountStaked == 0){
-            IERC20Upgradeable(StakeToken).transfer(referrals[_staker],amountEarnedForReferral); // burn it 
+            IIERC20(StakeToken).transfer(referrals[_staker],amountEarnedForReferral); // burn it 
             amountStaked = amountStaked.sub(amountEarnedForReferral);
         }
         if(stakings[_staker].amountStaked > 0){
@@ -64,7 +65,7 @@ contract ZippaStaking is Initializable, OwnableUpgradeable {
         }
         stakings[_staker].amountStaked = stakings[_staker].amountStaked.add(_amount);
         stakings[_staker].lastTimeStaked = block.timestamp;
-        IERC20Upgradeable(StakeToken).transfer(DeadAddress,amountStaked); // burn it 
+        IIERC20(StakeToken).transfer(DeadAddress,amountStaked); // burn it 
         emit StakeComplete(_staker,_amount,block.timestamp);
     }
 
@@ -84,13 +85,13 @@ contract ZippaStaking is Initializable, OwnableUpgradeable {
         uint256 totalClaim = (earningPerSec * totalSeconds * 10e18).add(userData.accuredBeforeZipRestake);
         userData.accuredBeforeZipRestake = 0;
         userData.lastTimeStaked = block.timestamp;
-        IERC20Upgradeable(RewardToken).mint(_msgSender(),totalClaim);
+        IIERC20(RewardToken).mint(_msgSender(),totalClaim);
         emit ClaimComplete(_msgSender(), totalClaim , block.timestamp);
     }
 
-    function transferRewardTokenOwnership()  external onlyOwner{
+    // function transferRewardTokenOwnership()  external onlyOwner{
 
-    }
+    // }
  
 
  
