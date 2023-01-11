@@ -4,9 +4,10 @@ import "@openzeppelin/contracts-upgradeable/token/ERC20/IERC20Upgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
 import "@openzeppelin/contracts-upgradeable/utils/math/SafeMathUpgradeable.sol";
+import "@openzeppelin/contracts-upgradeable/security/ReentrancyGuardUpgradeable.sol";
 
 
-contract Exchange is Initializable, OwnableUpgradeable {
+contract Exchange is Initializable, OwnableUpgradeable , ReentrancyGuardUpgradeable {
     using SafeMathUpgradeable for uint256;
     bool public swapActive;
     uint public minimumAmount;
@@ -19,6 +20,7 @@ contract Exchange is Initializable, OwnableUpgradeable {
 
     function initialize() external virtual initializer {
         __Ownable_init();
+        __ReentrancyGuard_init_unchained();
         swapActive = true;
         minimumAmount  = 1;
     }
@@ -27,7 +29,7 @@ contract Exchange is Initializable, OwnableUpgradeable {
        supportedTokens[_add] = status;
     }
    
-    function swap(address inputToken , address outputToken , uint amountIn) public  {
+    function swap(address inputToken , address outputToken , uint amountIn) public  nonReentrant {
         require(supportedTokens[inputToken] , "This token is not supported for trade here");
         require(supportedTokens[outputToken] , "This token is not supported for trade here");
         require(!whitelisters[_msgSender()], "This address is whitelisted");

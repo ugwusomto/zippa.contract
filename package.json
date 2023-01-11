@@ -26,7 +26,7 @@
     "clean": "npx hardhat clean",
     "hardhat": "npx hardhat node --network hardhat",
     "node-run": "npx hardhat node",
-    "compile": "npx hardhat compile",
+    "666999": "npx hardhat compile",
     "verify-testnet-zippa": "npx hardhat verify --network testnet  '0x780173c8080aE4401b1907A1BB363974a13c9B13'",
     "verify-testnet-zipp": "npx hardhat verify --network testnet  '0x62CB75Bb34Aa4c459D379161AF7DD12AF3D10Dbb'",
     "verify-presale": "npx hardhat verify --network testnet --constructor-args presale_testnet.js '0xBB25BE03c454bCEa98E5c798b8f6E64446Da67d4' --contract 'contracts/PreSale.sol:ZippaPreSale'",

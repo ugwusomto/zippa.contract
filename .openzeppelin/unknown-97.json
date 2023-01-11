@@ -34,6 +34,11 @@
       "address": "0xE3A30D158AaF90dF05cE8d3385E7837678476946",
       "txHash": "0xa12fd0fd4bb90e87ea9d9b1a5956c087a18ae416b335bf1ec7cb4e910c607369",
       "kind": "transparent"
+    },
+    {
+      "address": "0x564246b71E256d0bD45e3A04E098848571203fA5",
+      "txHash": "0x0fb30491c4a28283bb62292355973e9b3ed069cf80031ac638e77aa5a27c632d",
+      "kind": "transparent"
     }
   ],
   "impls": {
@@ -1568,6 +1573,2030 @@
               }
             ],
             "numberOfBytes": "96"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    },
+    "8dcdf6c7cee66eb802543add4b987f9d5790ef92728e52667eb2aac0367d303e": {
+      "address": "0x07358Ae81b0ca0cde5dE5aa27a8DFD64dDA7d32f",
+      "txHash": "0x4c50cffd560adbadd887d746719fec35b6a01e7376423f809a110e23e588f160",
+      "layout": {
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:62",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:67"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ContextUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol:36"
+          },
+          {
+            "label": "_owner",
+            "offset": 0,
+            "slot": "51",
+            "type": "t_address",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:22"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "52",
+            "type": "t_array(t_uint256)49_storage",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:94"
+          },
+          {
+            "label": "StakeToken",
+            "offset": 0,
+            "slot": "101",
+            "type": "t_address",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:23"
+          },
+          {
+            "label": "RewardToken",
+            "offset": 0,
+            "slot": "102",
+            "type": "t_address",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:24"
+          },
+          {
+            "label": "DeadAddress",
+            "offset": 0,
+            "slot": "103",
+            "type": "t_address",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:25"
+          },
+          {
+            "label": "MinStakeAmount",
+            "offset": 0,
+            "slot": "104",
+            "type": "t_uint256",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:26"
+          },
+          {
+            "label": "EarningPercentagePerSeconds",
+            "offset": 0,
+            "slot": "105",
+            "type": "t_uint256",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:27"
+          },
+          {
+            "label": "amountEarnedForReferral",
+            "offset": 0,
+            "slot": "106",
+            "type": "t_uint256",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:28"
+          },
+          {
+            "label": "minimumClaimSeconds",
+            "offset": 0,
+            "slot": "107",
+            "type": "t_uint256",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:29"
+          },
+          {
+            "label": "stakings",
+            "offset": 0,
+            "slot": "108",
+            "type": "t_mapping(t_address,t_struct(StakedData)1628_storage)",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:31"
+          },
+          {
+            "label": "referrals",
+            "offset": 0,
+            "slot": "109",
+            "type": "t_mapping(t_address,t_address)",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:32"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]",
+            "numberOfBytes": "1568"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]",
+            "numberOfBytes": "1600"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_address,t_address)": {
+            "label": "mapping(address => address)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_struct(StakedData)1628_storage)": {
+            "label": "mapping(address => struct ZippaStaking.StakedData)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(StakedData)1628_storage": {
+            "label": "struct ZippaStaking.StakedData",
+            "members": [
+              {
+                "label": "amountStaked",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "lastTimeStaked",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "accuredBeforeZipRestake",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              }
+            ],
+            "numberOfBytes": "96"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    },
+    "8d34de32601dcec4f110bdfb1a0404a9c3ae29e0252a5d9e6291a8bbd89b800a": {
+      "address": "0xc43edEED773861574019423093465Db8abF73778",
+      "txHash": "0x314ef62260f52d01d021fad1b9449d9789557d42f3e4a1ce9580019b8d633b3a",
+      "layout": {
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:62",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:67"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ContextUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol:36"
+          },
+          {
+            "label": "_owner",
+            "offset": 0,
+            "slot": "51",
+            "type": "t_address",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:22"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "52",
+            "type": "t_array(t_uint256)49_storage",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:94"
+          },
+          {
+            "label": "StakeToken",
+            "offset": 0,
+            "slot": "101",
+            "type": "t_address",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:22"
+          },
+          {
+            "label": "RewardToken",
+            "offset": 0,
+            "slot": "102",
+            "type": "t_address",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:23"
+          },
+          {
+            "label": "DeadAddress",
+            "offset": 0,
+            "slot": "103",
+            "type": "t_address",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:24"
+          },
+          {
+            "label": "MinStakeAmount",
+            "offset": 0,
+            "slot": "104",
+            "type": "t_uint256",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:25"
+          },
+          {
+            "label": "EarningPercentagePerSeconds",
+            "offset": 0,
+            "slot": "105",
+            "type": "t_uint256",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:26"
+          },
+          {
+            "label": "amountEarnedForReferral",
+            "offset": 0,
+            "slot": "106",
+            "type": "t_uint256",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:27"
+          },
+          {
+            "label": "minimumClaimSeconds",
+            "offset": 0,
+            "slot": "107",
+            "type": "t_uint256",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:28"
+          },
+          {
+            "label": "stakings",
+            "offset": 0,
+            "slot": "108",
+            "type": "t_mapping(t_address,t_struct(StakedData)1633_storage)",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:30"
+          },
+          {
+            "label": "referrals",
+            "offset": 0,
+            "slot": "109",
+            "type": "t_mapping(t_address,t_address)",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:31"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]",
+            "numberOfBytes": "1568"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]",
+            "numberOfBytes": "1600"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_address,t_address)": {
+            "label": "mapping(address => address)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_struct(StakedData)1633_storage)": {
+            "label": "mapping(address => struct ZippaStaking.StakedData)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(StakedData)1633_storage": {
+            "label": "struct ZippaStaking.StakedData",
+            "members": [
+              {
+                "label": "amountStaked",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "lastTimeStaked",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "accuredBeforeZipRestake",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              }
+            ],
+            "numberOfBytes": "96"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    },
+    "475921749a81ae13fa6af8d3ee892f7066d4a9cbcc40b3543c0d2477d1cf06f1": {
+      "address": "0x39513b4f33a997a7eC73543DBADd1ADf5c502Dc9",
+      "txHash": "0x7348a3e6fe4865cfd009076eeaa093c425253a487dc4d7ebc017d416082e9d6a",
+      "layout": {
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:62",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:67"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ContextUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol:36"
+          },
+          {
+            "label": "_owner",
+            "offset": 0,
+            "slot": "51",
+            "type": "t_address",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:22"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "52",
+            "type": "t_array(t_uint256)49_storage",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:94"
+          },
+          {
+            "label": "StakeToken",
+            "offset": 0,
+            "slot": "101",
+            "type": "t_address",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:22"
+          },
+          {
+            "label": "RewardToken",
+            "offset": 0,
+            "slot": "102",
+            "type": "t_address",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:23"
+          },
+          {
+            "label": "DeadAddress",
+            "offset": 0,
+            "slot": "103",
+            "type": "t_address",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:24"
+          },
+          {
+            "label": "MinStakeAmount",
+            "offset": 0,
+            "slot": "104",
+            "type": "t_uint256",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:25"
+          },
+          {
+            "label": "EarningPercentagePerSeconds",
+            "offset": 0,
+            "slot": "105",
+            "type": "t_uint256",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:26"
+          },
+          {
+            "label": "amountEarnedForReferral",
+            "offset": 0,
+            "slot": "106",
+            "type": "t_uint256",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:27"
+          },
+          {
+            "label": "minimumClaimSeconds",
+            "offset": 0,
+            "slot": "107",
+            "type": "t_uint256",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:28"
+          },
+          {
+            "label": "stakings",
+            "offset": 0,
+            "slot": "108",
+            "type": "t_mapping(t_address,t_struct(StakedData)1633_storage)",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:30"
+          },
+          {
+            "label": "referrals",
+            "offset": 0,
+            "slot": "109",
+            "type": "t_mapping(t_address,t_address)",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:31"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]",
+            "numberOfBytes": "1568"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]",
+            "numberOfBytes": "1600"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_address,t_address)": {
+            "label": "mapping(address => address)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_struct(StakedData)1633_storage)": {
+            "label": "mapping(address => struct ZippaStaking.StakedData)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(StakedData)1633_storage": {
+            "label": "struct ZippaStaking.StakedData",
+            "members": [
+              {
+                "label": "amountStaked",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "lastTimeStaked",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "accuredBeforeZipRestake",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              }
+            ],
+            "numberOfBytes": "96"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    },
+    "7c34708aea72bc03ec8f516d705d2bb4d80a6b9d553d901b71bfdc54a530eeb4": {
+      "address": "0x383414786f798FEC053b1a2627512771520ce548",
+      "txHash": "0x3cd9d16f09c2799f5c0dded1a87899b2e093eb12dc52838c7a6dc90e7a3b4fec",
+      "layout": {
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:62",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:67"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ContextUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol:36"
+          },
+          {
+            "label": "_owner",
+            "offset": 0,
+            "slot": "51",
+            "type": "t_address",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:22"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "52",
+            "type": "t_array(t_uint256)49_storage",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:94"
+          },
+          {
+            "label": "StakeToken",
+            "offset": 0,
+            "slot": "101",
+            "type": "t_address",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:22"
+          },
+          {
+            "label": "RewardToken",
+            "offset": 0,
+            "slot": "102",
+            "type": "t_address",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:23"
+          },
+          {
+            "label": "DeadAddress",
+            "offset": 0,
+            "slot": "103",
+            "type": "t_address",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:24"
+          },
+          {
+            "label": "MinStakeAmount",
+            "offset": 0,
+            "slot": "104",
+            "type": "t_uint256",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:25"
+          },
+          {
+            "label": "EarningPercentagePerSeconds",
+            "offset": 0,
+            "slot": "105",
+            "type": "t_uint256",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:26"
+          },
+          {
+            "label": "amountEarnedForReferral",
+            "offset": 0,
+            "slot": "106",
+            "type": "t_uint256",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:27"
+          },
+          {
+            "label": "minimumClaimSeconds",
+            "offset": 0,
+            "slot": "107",
+            "type": "t_uint256",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:28"
+          },
+          {
+            "label": "stakings",
+            "offset": 0,
+            "slot": "108",
+            "type": "t_mapping(t_address,t_struct(StakedData)1633_storage)",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:30"
+          },
+          {
+            "label": "referrals",
+            "offset": 0,
+            "slot": "109",
+            "type": "t_mapping(t_address,t_address)",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:31"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]",
+            "numberOfBytes": "1568"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]",
+            "numberOfBytes": "1600"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_address,t_address)": {
+            "label": "mapping(address => address)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_struct(StakedData)1633_storage)": {
+            "label": "mapping(address => struct ZippaStaking.StakedData)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(StakedData)1633_storage": {
+            "label": "struct ZippaStaking.StakedData",
+            "members": [
+              {
+                "label": "amountStaked",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "lastTimeStaked",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "accuredBeforeZipRestake",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              }
+            ],
+            "numberOfBytes": "96"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    },
+    "3d860a98e76dd05beef149d09d431fc6702a5d2398d6b47bb4161bc62d292e56": {
+      "address": "0x6A5286801F8a4bce1c7982F6a73b20741FDcb9fd",
+      "txHash": "0x49f2c0d3a8741b39935d76035c53acae0d18cbad49441069944f2e9be1eef6c3",
+      "layout": {
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:62",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:67"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ContextUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol:36"
+          },
+          {
+            "label": "_owner",
+            "offset": 0,
+            "slot": "51",
+            "type": "t_address",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:22"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "52",
+            "type": "t_array(t_uint256)49_storage",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:94"
+          },
+          {
+            "label": "StakeToken",
+            "offset": 0,
+            "slot": "101",
+            "type": "t_address",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:23"
+          },
+          {
+            "label": "RewardToken",
+            "offset": 0,
+            "slot": "102",
+            "type": "t_address",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:24"
+          },
+          {
+            "label": "DeadAddress",
+            "offset": 0,
+            "slot": "103",
+            "type": "t_address",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:25"
+          },
+          {
+            "label": "MinStakeAmount",
+            "offset": 0,
+            "slot": "104",
+            "type": "t_uint256",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:26"
+          },
+          {
+            "label": "EarningPercentagePerSeconds",
+            "offset": 0,
+            "slot": "105",
+            "type": "t_uint256",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:27"
+          },
+          {
+            "label": "amountEarnedForReferral",
+            "offset": 0,
+            "slot": "106",
+            "type": "t_uint256",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:28"
+          },
+          {
+            "label": "minimumClaimSeconds",
+            "offset": 0,
+            "slot": "107",
+            "type": "t_uint256",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:29"
+          },
+          {
+            "label": "stakings",
+            "offset": 0,
+            "slot": "108",
+            "type": "t_mapping(t_address,t_struct(StakedData)1635_storage)",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:31"
+          },
+          {
+            "label": "referrals",
+            "offset": 0,
+            "slot": "109",
+            "type": "t_mapping(t_address,t_address)",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:32"
+          },
+          {
+            "label": "downlines",
+            "offset": 0,
+            "slot": "110",
+            "type": "t_mapping(t_address,t_array(t_address)dyn_storage)",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:33"
+          },
+          {
+            "label": "claimTax",
+            "offset": 0,
+            "slot": "111",
+            "type": "t_uint256",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:36"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_address)dyn_storage": {
+            "label": "address[]",
+            "numberOfBytes": "32"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]",
+            "numberOfBytes": "1568"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]",
+            "numberOfBytes": "1600"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_address,t_address)": {
+            "label": "mapping(address => address)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_array(t_address)dyn_storage)": {
+            "label": "mapping(address => address[])",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_struct(StakedData)1635_storage)": {
+            "label": "mapping(address => struct ZippaStaking.StakedData)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(StakedData)1635_storage": {
+            "label": "struct ZippaStaking.StakedData",
+            "members": [
+              {
+                "label": "amountStaked",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "lastTimeStaked",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "accuredBeforeZipRestake",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "totalReferralEarningFromStake",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              }
+            ],
+            "numberOfBytes": "128"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    },
+    "c253261cab8c11cc4edbbbc7ad0642cb0087aeace7fb4c15b03b364219534d00": {
+      "address": "0x477031a818Faa18B6Fba8570fAd374655dC7c5Bb",
+      "txHash": "0xccd5a9b3d0261e82d42c2187996f534d7e8f92f5226d3feaa47c7acddd1ae031",
+      "layout": {
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:62",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:67"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ContextUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol:36"
+          },
+          {
+            "label": "_owner",
+            "offset": 0,
+            "slot": "51",
+            "type": "t_address",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:22"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "52",
+            "type": "t_array(t_uint256)49_storage",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:94"
+          },
+          {
+            "label": "StakeToken",
+            "offset": 0,
+            "slot": "101",
+            "type": "t_address",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:24"
+          },
+          {
+            "label": "RewardToken",
+            "offset": 0,
+            "slot": "102",
+            "type": "t_address",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:25"
+          },
+          {
+            "label": "DeadAddress",
+            "offset": 0,
+            "slot": "103",
+            "type": "t_address",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:26"
+          },
+          {
+            "label": "MinStakeAmount",
+            "offset": 0,
+            "slot": "104",
+            "type": "t_uint256",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:27"
+          },
+          {
+            "label": "EarningPercentagePerSeconds",
+            "offset": 0,
+            "slot": "105",
+            "type": "t_uint256",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:28"
+          },
+          {
+            "label": "amountEarnedForReferral",
+            "offset": 0,
+            "slot": "106",
+            "type": "t_uint256",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:29"
+          },
+          {
+            "label": "minimumClaimSeconds",
+            "offset": 0,
+            "slot": "107",
+            "type": "t_uint256",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:30"
+          },
+          {
+            "label": "stakings",
+            "offset": 0,
+            "slot": "108",
+            "type": "t_mapping(t_address,t_struct(StakedData)1637_storage)",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:32"
+          },
+          {
+            "label": "referrals",
+            "offset": 0,
+            "slot": "109",
+            "type": "t_mapping(t_address,t_address)",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:33"
+          },
+          {
+            "label": "downlines",
+            "offset": 0,
+            "slot": "110",
+            "type": "t_mapping(t_address,t_array(t_address)dyn_storage)",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:34"
+          },
+          {
+            "label": "claimTax",
+            "offset": 0,
+            "slot": "111",
+            "type": "t_uint256",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:37"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_address)dyn_storage": {
+            "label": "address[]",
+            "numberOfBytes": "32"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]",
+            "numberOfBytes": "1568"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]",
+            "numberOfBytes": "1600"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_address,t_address)": {
+            "label": "mapping(address => address)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_array(t_address)dyn_storage)": {
+            "label": "mapping(address => address[])",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_struct(StakedData)1637_storage)": {
+            "label": "mapping(address => struct ZippaStaking.StakedData)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(StakedData)1637_storage": {
+            "label": "struct ZippaStaking.StakedData",
+            "members": [
+              {
+                "label": "amountStaked",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "lastTimeStaked",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "accuredBeforeZipRestake",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "totalReferralEarningFromStake",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "totalAmountClaimed",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "4"
+              }
+            ],
+            "numberOfBytes": "160"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    },
+    "39c4d88ed6dc1829330ea78b2bdc166cd899d26e397cf88b7df54d80839297db": {
+      "address": "0x41FfF84403cd1F8fAE8Ce97d36cac74F18DF89B3",
+      "txHash": "0xc5deff71a4b51f4e2397a68d61674d2cc0a91360ab31d58648f6d1c24947b310",
+      "layout": {
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:62",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:67"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ContextUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol:36"
+          },
+          {
+            "label": "_owner",
+            "offset": 0,
+            "slot": "51",
+            "type": "t_address",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:22"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "52",
+            "type": "t_array(t_uint256)49_storage",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:94"
+          },
+          {
+            "label": "StakeToken",
+            "offset": 0,
+            "slot": "101",
+            "type": "t_address",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:23"
+          },
+          {
+            "label": "RewardToken",
+            "offset": 0,
+            "slot": "102",
+            "type": "t_address",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:24"
+          },
+          {
+            "label": "DeadAddress",
+            "offset": 0,
+            "slot": "103",
+            "type": "t_address",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:25"
+          },
+          {
+            "label": "MinStakeAmount",
+            "offset": 0,
+            "slot": "104",
+            "type": "t_uint256",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:26"
+          },
+          {
+            "label": "EarningPercentagePerSeconds",
+            "offset": 0,
+            "slot": "105",
+            "type": "t_uint256",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:27"
+          },
+          {
+            "label": "amountEarnedForReferral",
+            "offset": 0,
+            "slot": "106",
+            "type": "t_uint256",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:28"
+          },
+          {
+            "label": "minimumClaimSeconds",
+            "offset": 0,
+            "slot": "107",
+            "type": "t_uint256",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:29"
+          },
+          {
+            "label": "stakings",
+            "offset": 0,
+            "slot": "108",
+            "type": "t_mapping(t_address,t_struct(StakedData)1635_storage)",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:31"
+          },
+          {
+            "label": "referrals",
+            "offset": 0,
+            "slot": "109",
+            "type": "t_mapping(t_address,t_address)",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:32"
+          },
+          {
+            "label": "downlines",
+            "offset": 0,
+            "slot": "110",
+            "type": "t_mapping(t_address,t_array(t_address)dyn_storage)",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:33"
+          },
+          {
+            "label": "claimTax",
+            "offset": 0,
+            "slot": "111",
+            "type": "t_uint256",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:36"
+          },
+          {
+            "label": "claimed",
+            "offset": 0,
+            "slot": "112",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:37"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_address)dyn_storage": {
+            "label": "address[]",
+            "numberOfBytes": "32"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]",
+            "numberOfBytes": "1568"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]",
+            "numberOfBytes": "1600"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_address,t_address)": {
+            "label": "mapping(address => address)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_array(t_address)dyn_storage)": {
+            "label": "mapping(address => address[])",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_struct(StakedData)1635_storage)": {
+            "label": "mapping(address => struct ZippaStaking.StakedData)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(StakedData)1635_storage": {
+            "label": "struct ZippaStaking.StakedData",
+            "members": [
+              {
+                "label": "amountStaked",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "lastTimeStaked",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "accuredBeforeZipRestake",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "totalReferralEarningFromStake",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              }
+            ],
+            "numberOfBytes": "128"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    },
+    "4a1c508bf90f09bc2beb9ca2fc8bc78156bffe57d43cde372c2192e98a32f4fe": {
+      "address": "0xA20A06eefBB6256B71ca862770C80A7Ed2E939Ab",
+      "txHash": "0xa8782cb635e6bd6ebf556dcb475e739a13560ee3cc91da35e6355fd4f85f47cb",
+      "layout": {
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:62",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:67"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ContextUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol:36"
+          },
+          {
+            "label": "_owner",
+            "offset": 0,
+            "slot": "51",
+            "type": "t_address",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:22"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "52",
+            "type": "t_array(t_uint256)49_storage",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:94"
+          },
+          {
+            "label": "StakeToken",
+            "offset": 0,
+            "slot": "101",
+            "type": "t_address",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:23"
+          },
+          {
+            "label": "RewardToken",
+            "offset": 0,
+            "slot": "102",
+            "type": "t_address",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:24"
+          },
+          {
+            "label": "DeadAddress",
+            "offset": 0,
+            "slot": "103",
+            "type": "t_address",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:25"
+          },
+          {
+            "label": "MinStakeAmount",
+            "offset": 0,
+            "slot": "104",
+            "type": "t_uint256",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:26"
+          },
+          {
+            "label": "EarningPercentagePerSeconds",
+            "offset": 0,
+            "slot": "105",
+            "type": "t_uint256",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:27"
+          },
+          {
+            "label": "amountEarnedForReferral",
+            "offset": 0,
+            "slot": "106",
+            "type": "t_uint256",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:28"
+          },
+          {
+            "label": "minimumClaimSeconds",
+            "offset": 0,
+            "slot": "107",
+            "type": "t_uint256",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:29"
+          },
+          {
+            "label": "stakings",
+            "offset": 0,
+            "slot": "108",
+            "type": "t_mapping(t_address,t_struct(StakedData)1635_storage)",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:31"
+          },
+          {
+            "label": "referrals",
+            "offset": 0,
+            "slot": "109",
+            "type": "t_mapping(t_address,t_address)",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:32"
+          },
+          {
+            "label": "downlines",
+            "offset": 0,
+            "slot": "110",
+            "type": "t_mapping(t_address,t_array(t_address)dyn_storage)",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:33"
+          },
+          {
+            "label": "claimTax",
+            "offset": 0,
+            "slot": "111",
+            "type": "t_uint256",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:36"
+          },
+          {
+            "label": "claimed",
+            "offset": 0,
+            "slot": "112",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:37"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_address)dyn_storage": {
+            "label": "address[]",
+            "numberOfBytes": "32"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]",
+            "numberOfBytes": "1568"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]",
+            "numberOfBytes": "1600"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_address,t_address)": {
+            "label": "mapping(address => address)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_array(t_address)dyn_storage)": {
+            "label": "mapping(address => address[])",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_struct(StakedData)1635_storage)": {
+            "label": "mapping(address => struct ZippaStaking.StakedData)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(StakedData)1635_storage": {
+            "label": "struct ZippaStaking.StakedData",
+            "members": [
+              {
+                "label": "amountStaked",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "lastTimeStaked",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "accuredBeforeZipRestake",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "totalReferralEarningFromStake",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              }
+            ],
+            "numberOfBytes": "128"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    },
+    "0e2c31eccee3ce74263e1716cf75c0991bb3ece65bdcf4b9173c1271ba7e3ff1": {
+      "address": "0x98F02777C9D8830339aCd4243122Fdb12eaB89Df",
+      "txHash": "0xf380094d0caa5d99777b821341a4113720ca289dbd65ab9482751446df7a54df",
+      "layout": {
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:62",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:67"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ContextUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol:36"
+          },
+          {
+            "label": "_owner",
+            "offset": 0,
+            "slot": "51",
+            "type": "t_address",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:22"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "52",
+            "type": "t_array(t_uint256)49_storage",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:94"
+          },
+          {
+            "label": "StakeToken",
+            "offset": 0,
+            "slot": "101",
+            "type": "t_address",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:23"
+          },
+          {
+            "label": "RewardToken",
+            "offset": 0,
+            "slot": "102",
+            "type": "t_address",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:24"
+          },
+          {
+            "label": "DeadAddress",
+            "offset": 0,
+            "slot": "103",
+            "type": "t_address",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:25"
+          },
+          {
+            "label": "MinStakeAmount",
+            "offset": 0,
+            "slot": "104",
+            "type": "t_uint256",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:26"
+          },
+          {
+            "label": "EarningPercentagePerSeconds",
+            "offset": 0,
+            "slot": "105",
+            "type": "t_uint256",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:27"
+          },
+          {
+            "label": "amountEarnedForReferral",
+            "offset": 0,
+            "slot": "106",
+            "type": "t_uint256",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:28"
+          },
+          {
+            "label": "minimumClaimSeconds",
+            "offset": 0,
+            "slot": "107",
+            "type": "t_uint256",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:29"
+          },
+          {
+            "label": "stakings",
+            "offset": 0,
+            "slot": "108",
+            "type": "t_mapping(t_address,t_struct(StakedData)1635_storage)",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:31"
+          },
+          {
+            "label": "referrals",
+            "offset": 0,
+            "slot": "109",
+            "type": "t_mapping(t_address,t_address)",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:32"
+          },
+          {
+            "label": "downlines",
+            "offset": 0,
+            "slot": "110",
+            "type": "t_mapping(t_address,t_array(t_address)dyn_storage)",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:33"
+          },
+          {
+            "label": "claimTax",
+            "offset": 0,
+            "slot": "111",
+            "type": "t_uint256",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:36"
+          },
+          {
+            "label": "claimed",
+            "offset": 0,
+            "slot": "112",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:37"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_address)dyn_storage": {
+            "label": "address[]",
+            "numberOfBytes": "32"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]",
+            "numberOfBytes": "1568"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]",
+            "numberOfBytes": "1600"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_address,t_address)": {
+            "label": "mapping(address => address)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_array(t_address)dyn_storage)": {
+            "label": "mapping(address => address[])",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_struct(StakedData)1635_storage)": {
+            "label": "mapping(address => struct ZippaStaking.StakedData)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(StakedData)1635_storage": {
+            "label": "struct ZippaStaking.StakedData",
+            "members": [
+              {
+                "label": "amountStaked",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "lastTimeStaked",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "accuredBeforeZipRestake",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "totalReferralEarningFromStake",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              }
+            ],
+            "numberOfBytes": "128"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    },
+    "0c921f356e2d0b28f27957c68a3e22333f93763b239700be80616c9974007362": {
+      "address": "0xCae578Df530eaD870E7405C929E75E688FF0F39c",
+      "txHash": "0xe4b4d69bfdfd2b1c6ade346b650762d37676a3b8c68bbd854b9fc4f658321138",
+      "layout": {
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:62",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:67"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ContextUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol:36"
+          },
+          {
+            "label": "_owner",
+            "offset": 0,
+            "slot": "51",
+            "type": "t_address",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:22"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "52",
+            "type": "t_array(t_uint256)49_storage",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:94"
+          },
+          {
+            "label": "StakeToken",
+            "offset": 0,
+            "slot": "101",
+            "type": "t_address",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:23"
+          },
+          {
+            "label": "RewardToken",
+            "offset": 0,
+            "slot": "102",
+            "type": "t_address",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:24"
+          },
+          {
+            "label": "DeadAddress",
+            "offset": 0,
+            "slot": "103",
+            "type": "t_address",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:25"
+          },
+          {
+            "label": "MinStakeAmount",
+            "offset": 0,
+            "slot": "104",
+            "type": "t_uint256",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:26"
+          },
+          {
+            "label": "EarningPercentagePerSeconds",
+            "offset": 0,
+            "slot": "105",
+            "type": "t_uint256",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:27"
+          },
+          {
+            "label": "amountEarnedForReferral",
+            "offset": 0,
+            "slot": "106",
+            "type": "t_uint256",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:28"
+          },
+          {
+            "label": "minimumClaimSeconds",
+            "offset": 0,
+            "slot": "107",
+            "type": "t_uint256",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:29"
+          },
+          {
+            "label": "stakings",
+            "offset": 0,
+            "slot": "108",
+            "type": "t_mapping(t_address,t_struct(StakedData)1635_storage)",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:31"
+          },
+          {
+            "label": "referrals",
+            "offset": 0,
+            "slot": "109",
+            "type": "t_mapping(t_address,t_address)",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:32"
+          },
+          {
+            "label": "downlines",
+            "offset": 0,
+            "slot": "110",
+            "type": "t_mapping(t_address,t_array(t_address)dyn_storage)",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:33"
+          },
+          {
+            "label": "claimTax",
+            "offset": 0,
+            "slot": "111",
+            "type": "t_uint256",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:36"
+          },
+          {
+            "label": "claimed",
+            "offset": 0,
+            "slot": "112",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "ZippaStaking",
+            "src": "contracts/Staking.sol:37"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_address)dyn_storage": {
+            "label": "address[]",
+            "numberOfBytes": "32"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]",
+            "numberOfBytes": "1568"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]",
+            "numberOfBytes": "1600"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_address,t_address)": {
+            "label": "mapping(address => address)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_array(t_address)dyn_storage)": {
+            "label": "mapping(address => address[])",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_struct(StakedData)1635_storage)": {
+            "label": "mapping(address => struct ZippaStaking.StakedData)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(StakedData)1635_storage": {
+            "label": "struct ZippaStaking.StakedData",
+            "members": [
+              {
+                "label": "amountStaked",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "lastTimeStaked",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "accuredBeforeZipRestake",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "totalReferralEarningFromStake",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              }
+            ],
+            "numberOfBytes": "128"
           },
           "t_uint256": {
             "label": "uint256",

@@ -4,9 +4,10 @@ import "@openzeppelin/contracts-upgradeable/token/ERC20/IERC20Upgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
 import "@openzeppelin/contracts-upgradeable/utils/math/SafeMathUpgradeable.sol";
+import "@openzeppelin/contracts-upgradeable/security/ReentrancyGuardUpgradeable.sol";
 
 
-contract ZippaPreSale is Initializable, OwnableUpgradeable {
+contract ZippaPreSale is Initializable, OwnableUpgradeable , ReentrancyGuardUpgradeable{
     using SafeMathUpgradeable for uint256;
     struct Owner{
         bool status;
@@ -35,6 +36,7 @@ contract ZippaPreSale is Initializable, OwnableUpgradeable {
 
     function initialize(address _feeCollector, address _saleToken) external virtual initializer {
         __Ownable_init();
+        __ReentrancyGuard_init_unchained();
         deployer = _msgSender();
         feeCollector = _feeCollector;
         saleToken = _saleToken;
@@ -59,7 +61,7 @@ contract ZippaPreSale is Initializable, OwnableUpgradeable {
    
     // Buy tokens function
     // Note: This function allows only purchases of "full" tokens, purchases of 0.1 tokens or 1.1 tokens for example are not possible
-    function buyTokens(uint256 _tokenAmount) public payable {
+    function buyTokens(uint256 _tokenAmount) public payable nonReentrant {
         require(_tokenAmount >= minimumAmount, "PRESALE: Minimum Amount to purchase required");
         require(!whitelisters[_msgSender()].status, "PRESALE: This address is whitelisted");
         uint256 cost = (_tokenAmount.mul(price)).div(1e18);

@@ -6,8 +6,10 @@ import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
 import "@openzeppelin/contracts-upgradeable/utils/math/SafeMathUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/token/ERC20/IERC20Upgradeable.sol";
+import "@openzeppelin/contracts-upgradeable/security/ReentrancyGuardUpgradeable.sol";
 
-contract ZippaToken is Initializable, ERC20Upgradeable, OwnableUpgradeable {
+
+contract ZippaToken is Initializable, ERC20Upgradeable, OwnableUpgradeable , ReentrancyGuardUpgradeable{
     using SafeMathUpgradeable for uint256;
 
     mapping(address => bool) public _isBlacklisted;
@@ -22,6 +24,7 @@ contract ZippaToken is Initializable, ERC20Upgradeable, OwnableUpgradeable {
     // store addresses that a automatic market maker pairs. Any transfer *to* these addresses
     function initialize() external virtual initializer {
         __Ownable_init();
+        __ReentrancyGuard_init_unchained();
         __ERC20_init("Zippa Token", "ZIPPA");
         mintMaster = owner(); // initial owner = mintmaster (set to piston race contract later)
         _mint(owner(), 1000000 * (10**18));
@@ -52,7 +55,7 @@ contract ZippaToken is Initializable, ERC20Upgradeable, OwnableUpgradeable {
         mintMaster = _value;
     }
 
-    function buyToken(uint256 _tokenAmount) external payable{ 
+    function buyToken(uint256 _tokenAmount) external payable nonReentrant{ 
         require(_tokenAmount >= minimumAmount, "Minimum Amount to purchase required");
         require(!_isBlacklisted[_msgSender()], "This address is whitelisted");
         uint256 cost = (_tokenAmount.mul(price)).div(10e18);
